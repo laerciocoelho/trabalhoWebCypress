@@ -1,0 +1,23 @@
+{
+  "name": "automacao-web-cypress",
+  "version": "1.0.0",
+  "description": "Trabalho de conclusão - Automação Web com Cypress (Automation Exercise)",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "clean:reports": "node -e \"require('fs').rmSync('cypress/reports',{recursive:true,force:true})\"",
+    "cy:open": "cypress open",
+    "cy:run": "npm run clean:reports && cypress run --spec cypress/e2e/automation-exercise.cy.js",
+    "cy:run:chrome": "npm run clean:reports && cypress run --browser chrome --spec cypress/e2e/automation-exercise.cy.js",
+    "test": "npm run cy:run"
+  },
+  "keywords": ["cypress", "e2e", "automation-exercise", "mochawesome"],
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
+    "cypress": "^16.2.1",
+    "cypress-mochawesome-reporter": "^5.0.0"
+  }
+}
